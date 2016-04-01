@@ -15,9 +15,34 @@ function markers() {
 		return "\n\n";
 	};
 	
-	markers.makeLink = function(string, url){
-		var link = "[" + string + "](" + url + ")";
-		return link;
+	markers.link = function(string, type){
+		var output,
+		    linkType = type ? type.indexOf("http") === -1 ? type || "url" : "hyper" : "url";
+
+		switch(linkType){
+		// Twitter-related links
+			case "@":
+				output = "[@" + string + "](http://www.twitter.com/" + string + ")";
+				break;
+			case "#":
+				output = "[#" + string + "](http://www.twitter.com/hashtag/" + string + ")";
+				break;
+		// Reddit-related links
+			case "reddit":
+				output = "[/r/" + string + "](http://www.reddit.com/r/" + string + ")";
+				break;
+			case "redditor":
+				output = "[/u/" + string + "](http://www.reddit.com/u/" + string + ")";
+				break;
+		// hyperlinked text
+			case "hyper":
+				output = "[" + string + "](" + type + ")";
+				break;
+		// direct hyperlinks
+			default: console.log("[" + string  + "](" + string + ")");
+		}
+
+		return output;
 	};
 	
 	markers.bold = function(string){

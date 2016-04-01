@@ -22,7 +22,18 @@ mrk.bold("Homecity BeisbolCats");
 ```
 Show us your links:
 ```javascript
-mrk.makeLink("cool page with fun stuff", "http://c-ro.github.io");
+// just throw in a URL
+mrk.link("http://www.carl.com");
+// make hyperlinked text
+mrk.link("Hyperlink!", "http://www.hyperlink.com");
+// link a twitter username
+mrk.link("gnirtsmodnar", "@");
+// link a twitter hashtag
+mrk.link("JavaScript", "#");
+// link a subreddit
+mrk.link("ncisfanclub", "reddit");
+// link a reddit user profile
+mrk.link("cherrypicker", "redditor");
 ```
 Make an unordered list by default:
 ```javascript
