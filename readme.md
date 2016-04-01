@@ -1,6 +1,6 @@
 # Markers 
 
-Markers is a npm module that helps you programmatically generate markdown.
+Markers is a node module that helps you programmatically generate markdown.
 
 # Usage:
 
