@@ -1,0 +1,12 @@
+{
+    "name": "markers",
+    "version": "0.0.1",
+    "preferGlobal": "true",
+    "bin": { 
+    	"markers": "markers.js",
+    	"updates": "updates.js"},
+    "engines": { "node": "*" },
+    "scripts": {
+    	"start": "node markers.js"
+    	}
+}

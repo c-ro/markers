@@ -39,7 +39,7 @@ function markers() {
 				output = "[" + string + "](" + type + ")";
 				break;
 		// direct hyperlinks
-			default: console.log("[" + string  + "](" + string + ")");
+			default: output = "[" + string  + "](" + string + ")";
 		}
 
 		return output;
@@ -48,6 +48,19 @@ function markers() {
 	markers.bold = function(string){
 		var boldString = "**" +  string + "**";
 		return boldString;
+	};
+
+	markers.h = function(int, string){
+		//mrk.h(6, "makes an h6 header");
+		var prefix = "",
+			num = int <= 6 ? int : 6, // ints > 6 are invalid, fail quietly and use 6
+			hash = function(){
+				for(var i = 0; i < num; i++){
+					prefix = prefix + "#";
+				}
+			}();
+
+		return  prefix + " " + string;
 	};
 	
 	markers.list = function(array, listType){
